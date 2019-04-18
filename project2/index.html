@@ -30,7 +30,7 @@
             <div class="welcomeScreen">
 
                 <h1>Welcome  to Hari Whakangahau Cinema </h1>
-                <button onclick="viewShowTimesScreen()">View Shows and Times</button> <br>
+                <button onclick="viewShowTimesScreen()">View Movies and Times</button> <br>
                 please login  or register to Book Tickets <br>
                 <button onclick="showLoginScreen()">Login</button>
                 
@@ -72,9 +72,12 @@
                 <button onclick="showLoginScreen()">Login</button>
                 <button onclick="showRegisterScreen()">Register</button>   
                 <div class="showTimesTable">
-                    please select a date<p>Select Date: <input type="text" class="datepicker"></p>
+                    <p>Please select a date: <input type="text" id="datepicker"></p>
 
                 </div>
+                <button onclick="showMoviesOnDate()" id="submitDate">Submit</button>
+
+
             </div>
 
             <div class="bookTickets">

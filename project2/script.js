@@ -25,3 +25,27 @@ function viewShowTimesScreen(){
 	registerScreen[0].style.display="none";
 	loginScreen[0].style.display="none";
 }
+
+
+
+
+// SHOW TIMES SCREEN FUCNTIONALITY 
+
+function showMoviesOnDate(){
+
+}
+
+function movie(previewDate1,previewDate2,time1,time2){
+	this.previewDate1 =previewDate1;
+	this.previewDate2 = previewDate2;
+	this.time1=time1;
+	this.time2= time2;
+}
+
+function assignDatesAndTimeToMovie(){
+	// everyday there will be a movie because Requirement is 
+	//minimum two different movie sessions per day for each cinema room
+	//means 4 movies each day
+
+
+}
