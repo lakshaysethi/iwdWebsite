@@ -1,0 +1,45 @@
+body,html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#mainArea{
+    height: calc(100% - 76px);
+    overflow: auto;
+    position: relative;
+   
+    
+}
+#bottomArea{
+    height: 76px;
+    background-color: azure;
+    text-align: center;
+  
+}
+.para{
+    text-align: center;
+    font-size: 30px;
+  position: absolute;
+    
+    
+}
+.para:hover{
+    background-color: aqua;
+}
+
+.NP{
+    width:30px;
+    height:30px; 
+    background-color: beige;
+    display: inline;
+}
+.textbox-ls{
+    overflow: auto;
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    left:50%;
+    top: 60%;
+}

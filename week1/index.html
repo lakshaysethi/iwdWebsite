@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>week 1 exercises</title>
+	<script>
+		function myAction() {
+			document.getElementById("myDisplay").innerHTML= 'Hello' ;	
+		}
+		function myDisplay () {
+			var mytext;
+			var myage;
+			    // Get the value of the input field with id="username"
+			 mytext = document.getElementById("username").value;
+			// Get the value of the input field with id="age"
+			 myage = document.getElementById("age").value;
+
+			 document.getElementById("myDisplay").innerHTML= "Hello " + mytext + " Your age is " + myage;
+		} 
+
+		function myCheck() {
+			var x = document.getElementById("mySelect").value;
+			if (x=="red"){
+				document.getElementById("demo").innerHTML = "This is red";
+			}else{
+			document.getElementById("demo").innerHTML = "This is something else" ;
+			}
+		}
+
+		function myColour() {
+			if (document.getElementById("myRed").checked){
+				alert(' It is a red colour.');
+			} else {
+				alert(' It is a blue colour.');
+			}
+		}
+	</script>
+    <style>
+        .topNavBar{
+            overflow: hidden;
+            background-color: black;
+            padding: 0 5%;
+            
+        }
+        a{
+            padding: 10px;
+            display: block;
+            float: left;
+            text-decoration: none;
+            color:white;
+            
+        }
+        a:hover{
+            background-color: red;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="pageContainer">
+        
+        <div class="topNavBar">
+            <a href="index.html">Homework</a>
+            <a href="classwork.html">Classwork</a>
+            <a href="../index.html">Homepage</a>
+        </div>    
+    
+        <div class="mainContent">
+
+            <div id="Ex1">
+                <button type="button" onclick="myAction()">Hello</button>
+                <p id="myDisplay"></p><br/>
+            </div>
+            <br><br>
+            <div id="Ex2">
+                Name: <input id="username" type="text"><br/>
+                Age: <input id="age" type="number"><br/>
+                <button type="button" onclick="myDisplay()">Greeting</button>
+            </div>
+            <br><br>
+            <div id="Ex3">
+                <p id="demo"></p>
+                <select id="mySelect" size="1">
+                <option value='blue'>Blue</option>
+                <option value='red'>Red</option>  
+                </select><br/>
+                <br><button onclick="myCheck ()">Check Colour</button>
+
+
+            </div>
+            <br><br>
+            <div id="Ex4">
+                <input type="radio" name="myColor"  checked id="myRed" onclick="myColour()"> Red<br>
+                <input type="radio" name="myColor"  id="myBlue" onclick="myColour()"> Blue<br>
+            </div>
+
+        </div>
+        
+    </div>
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+

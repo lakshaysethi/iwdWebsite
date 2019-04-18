@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Practical in folder week 4: 
+
+Create XML file with a list of subjects which you did or you are doing at Unitec  
+On your landing( for week 4) page 
+
+
+create a button which will display a list of subjects (read from XML file),
+
+  (create  an object "paper") 
+
+
+
+
+On your landing page create buttons to provide an ability to correct  each display  subject, and update it. 
+On your landing page create button to add a new subject to your list ( you need to specify which one is completed or you are doing now or you are plan to do ) 
+-->
+
+
+<papers>
+  <paper>
+    <name>Multimedia and Web Development</name>
+    <class>5024</class>
+    <teacher>Le Song</teacher>
+    <classroom>183-1001</classroom>
+  </paper>
+  <paper>
+    <name>Internet And Web Development</name>
+    <class>1525</class>
+    <teacher>Natalia</teacher>
+    <classroom>183-2104</classroom>
+  </paper>
+  <paper>
+    <name>GUI Programming</name>
+    <class>6024</class>
+    <teacher>Natalia</teacher>
+    <classroom>183-1002</classroom>
+  </paper>
+  <paper>
+    <name>Info System Concepts</name>
+    <class>5012</class>
+    <teacher>Seiu Ram</teacher>
+    <classroom>183-1004</classroom>
+  </paper>
+  <paper>
+    <name>Hardware Fundamentals</name>
+    <class>5124</class>
+    <teacher>Andrew David</teacher>
+    <classroom>182-2001</classroom>
+  </paper>
+</papers>

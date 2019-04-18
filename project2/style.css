@@ -1,0 +1,50 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    height: 100px;
+    background-color: aquamarine;
+    
+}
+.title h1{
+   margin: 0 20%;
+    padding: 30px;
+}
+.navBar{
+    overflow: hidden;
+    background-color: black;
+    
+}
+.navBar a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: black;
+    padding: 10px;
+    
+}
+
+
+
+.navBar a.active{
+     background-color: mediumaquamarine;
+}
+.navBar a:hover{
+    background-color: red;
+}
+.mainContent{
+    height: auto;
+}
+.container{
+    margin: 0 auto;
+    height: 500px;
+    width: 800px;
+    border: black solid 2px;
+    overflow: hidden;
+}
+.registerScreen,.loginScreen,.welcomeScreen,.showTimes{
+    height: inherit;
+}

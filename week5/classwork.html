@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork week5</title>
+</head>
+<body>
+   <a href="animationoncanvas.html">Animation on canvas</a>
+    <canvas id="myCanvas" width="400" height="400">
+    Your browser doesn't support the canvas! Try another browser.
+    </canvas>
+    <script>
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.lineTo(300,150);
+    ctx.lineWidth=10;
+    ctx.strokeStyle="#FF0000";
+    ctx.stroke();
+
+    ctx.lineTo(0,350);
+    ctx.stroke();
+    ctx.rect(20,20,150,100);
+    ctx.stroke();
+    ctx.rect(20,50,100,50);
+    ctx.stroke();
+        ctx.strokeStyle="green";
+        ctx.beginPath();
+        ctx.arc(200,200,50,0,2*Math.PI);
+        ctx.stroke();
+    
+
+
+    </script>
+
+
+    
+    
+    
+</body>
+</html>

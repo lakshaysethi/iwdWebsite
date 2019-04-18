@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Goals app</title>
+</head>
+<body>
+    
+    
+    <div id="mainArea">
+       <div id="p1"></div>
+       <div class="textbox-ls">
+           <textarea rows="4" cols="50"></textarea>
+       </div>
+    </div>
+    <div id="bottomArea">
+        <input id="t1" rows="5"cols="3" type="textarea"/>
+        <button onclick="addText()"> Add Text</button>
+        <button onclick="clearp1()">clear</button>
+        <button onclick="save()">save</button>
+        <button onclick="makeLink()">Make Link</button>
+    </div>
+    
+</body>
+<script>
+    var p1=document.getElementById("p1");
+    var t1 = document.getElementById("t1");
+    var i=2;
+    var editMode= false;
+    var selectedElement;
+    var top1=0;
+    var left1="50%";
+    function addText(a){
+        //make new element and add it to html
+        //set text of that element to textbox value or user input
+        if(t1.value==""){
+            alert("please enter something into the textbox")
+        }else{
+            if(editMode){
+            selectedElement.innerHTML=t1.value;
+            editMode=false;
+            
+            }else{
+            p1.innerHTML+="<div class='para' style='top:"+top1+"px; left:"+left1+";' onclick='editElem(this)' id = 'p"+i+"'>"+t1.value+"</div>";
+            i++;
+            }
+            t1.value="";
+            
+            //left1+=10;
+            
+            top1+=30;
+            
+        }
+    
+    }
+    function clearp1(){
+        p1.innerHTML="";
+        t1.focus();
+        t1.value="";
+        
+    }
+    function save(){
+        
+    }
+    
+    function makeLink(){
+        var NP = document.createElement("div");
+        NP.setAttribute("class","NP");
+        NP.setAttribute("onclick","newPage()");
+        NP.innerHTML="NP";
+        p1.insertBefore(NP,selectedElement);
+//        selectedElement.innerHTML+= "<div class='NP' onclick='newPage()' >NP</div>"
+    }
+    function newPage(){
+        alert("newPage");
+    }
+    function editElem(a){
+        t1.value=a.innerHTML;
+        selectedElement=a;
+        editMode=true;
+        t1.select();
+        
+        
+    }
+    t1.addEventListener("keydown",function(e){
+        if (e.keyCode==13){
+            addText();
+            
+        }
+    });
+    
+    
+    
+</script>
+</html>

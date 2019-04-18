@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 6 exercises</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="pageContainer">
+        <div id="topNavBar">
+            <a href="../index.html">Homepage</a>
+            <a href="index.html">Homework</a>
+            <a href="classowrk.html">Classwork</a>
+        </div>
+        
+        <div id="mainContent">
+            <canvas width="600" height="500" id="canvas"></canvas><br>
+            <button id="btnStart">Start</button>
+            <button id="btnStop">Stop</button>
+        </div>
+    </div>
+</body>
+
+<script>
+   
+
+
+
+
+
+   var canvas = document.getElementById("canvas");
+    var c = canvas.getContext("2d");
+    
+	//car speed 
+	var dx= 1;
+    //car
+    function Car(x,y,s){
+        this.x= x;
+        this.y = y;
+        this.speed = s;
+        
+        
+        
+        this.draw = function(){
+            c.fillStyle = "red";
+            c.beginPath();
+            c.moveTo(this.x,this.y);
+            c.lineTo(this.x,this.y+100);
+            c.lineTo(this.x+250,this.y+100);
+            c.lineTo(this.x+250,this.y+50);
+            c.lineTo(this.x+150,this.y+50);
+            c.lineTo(this.x+100,this.y);
+            c.closePath();
+            c.fill();
+            c.stroke();
+        }
+    }
+    //car ends
+    
+    var angle=0;
+	//wheels
+    function Wheel(x,y,r){
+        this.x = x;
+        this.y=y;
+        this.radius = r;
+        this.rotate = function(){
+            c.save();
+            c.translate(this.x,this.y);
+            c.rotate(angle);
+            this.draw();
+            c.restore();
+            angle+=0.01*dx;
+        }
+        this.draw = function(){
+            c.fillStyle="rgb(89, 89, 89)";
+            c.beginPath();
+            c.arc(0,0,this.radius,0,Math.PI);
+            c.lineTo(0+this.radius,0);
+            
+            c.stroke();
+            c.fill()
+            c.closePath();
+            c.beginPath();
+            c.fillStyle="#000"
+            c.arc(0,0,this.radius,Math.PI,0);
+            c.fill()
+            c.stroke();
+          
+        }
+        
+    }
+    //wheels end
+    
+    //for car
+    var x=200;
+    var y = 340;
+  
+   
+    btnStart = document.getElementById("btnStart");
+    btnStop = document.getElementById("btnStop");
+    var animation;
+    btnStart.onclick= function(){
+    animation = setInterval(move,30);
+        
+    }
+    btnStop.onclick= function(){
+        clearInterval(animation);
+    }
+    move();
+    
+    function move(){
+      c.clearRect(0,0,600,500);
+      //road
+      c.beginPath();
+      c.moveTo(0,450);
+      c.lineTo(600,450);
+      c.lineTo(600,500);
+      c.lineTo(0,500);
+      c.closePath();
+      c.fillStyle = "rgb(125,125,125)";
+      c.fill();
+      
+      
+      var car = new Car(x,y,1);
+        
+        var wheel1 = new Wheel(x+40,y+100,30);
+        
+      var wheel2 = new Wheel(x+150,y+100,30);
+      
+      car.draw();
+        
+        
+      wheel1.rotate();
+        
+      wheel2.rotate();
+        
+      if(x+250<canvas.width){
+        x=x+dx;
+        if(x<0){
+            dx*=-1;
+            x+=10;
+
+        }
+      
+      }else if(x+250==canvas.width){
+          dx*=-1;
+          x--;
+      }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    //learning circles and lines
+//    for(i=0;i<10;i++){
+//        
+//        var x= Math.random()*canvas.width;
+//        var y= Math.random()*canvas.height;
+//        var color = "rgba("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+(Math.random()+0.5)+")";
+//    
+//        c.strokeStyle= color;
+//        c.beginPath();
+//        c.moveTo(canvas.width/2,canvas.height/2);
+//        c.lineTo(x,y);
+//        c.stroke();
+//        c.beginPath();
+//        c.arc(x,y,30,Math.PI*2,false);
+//        c.stroke();
+//        
+//    }
+    
+    
+
+</script>
+</html>

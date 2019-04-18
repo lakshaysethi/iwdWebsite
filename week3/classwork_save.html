@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 3 Classwork</title>
+   
+    <link rel="stylesheet" href="week3style.css"> 
+     <style>
+      
+        
+        .block{
+            margin: 3% 15%;
+            padding: 10px;
+            background-color: white;
+            
+        }
+        
+         .displayNone{
+             display: none;
+         }
+    </style>
+</head>
+
+
+<body>
+    
+    <div id="topNavBar">
+        <ul>
+            <li><a href="classwork.html">Classwork Week 3</a></li>
+            <li><a href="homework.html">Homework Week 3</a></li>
+            <li><a href="../index.html">Homepage</a></li>
+        
+        
+        </ul>
+    </div>
+    
+    <div id="mainSection">
+       <!-- in block there is everything -->
+        <div class="block">
+            <h1 style="text-align: center;">ClassWork week 3</h1>
+                
+            <div id="firstExercise">
+                <h2>Animation With HTML 5</h2>
+                
+                <div id="buttons">
+                    <button onclick="showStep1()">step1</button>
+                    <button onclick="showStep2()">step2</button>
+                    <button onclick="showStep3()">step3</button>
+                    <button onclick="showStep4()">step4</button>
+                    <button onclick="showStep5()">step5</button>
+                    <button onclick="showStep6()">step6</button>
+                </div>
+                <div id="step1Div" style="width: 580px;height: 50px; border: solid 4px black;">
+                    <div id="elem" style="position: relative; width: 20px; height: 50px;background-color: aquamarine;"></div>
+                        <script>
+                        //onclick the elem it move right 
+                        var elem = document.getElementById("elem");
+                        var left = 0;
+                        var move;
+                            elem.onclick=function myfunction(){
+                             move =setInterval(movElem, 10);
+                        
+                        }
+                            
+                        function movElem(){
+                        if(left>400){
+                         clearInterval(move);   
+                        }
+                         elem.style.left= left++ +"px";
+                        
+                        }
+                        </script>
+                </div>
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                
+                  
+                    
+                      
+                        
+                          
+                              
+                  
+                  
+                  
+                  
+                  
+                   <!-- box -->
+                <div id="step2Div" class="displayNone"   style="width: 580px;height: 580px; border: solid 4px black;">
+                    <!-- blue move element -->
+                    <div id="elemStep2" style="position: relative; width: 20px; height: 50px;background-color: aquamarine;"></div>
+                    
+                    
+                       
+                    <script>
+                    //on click - move right and down  till 400px right then move left
+                        
+                        //how to move ? -setInterval
+                        
+                        //use long names 
+                        
+                        //pseudo code:
+                        //var nameofelement = get elemebt by id elemstep2;
+                        var elemStep2 = document.getElementById("elemStep2");
+                        //nameofelement.onclick: do following slowly:
+                        elemStep2.onclick=function myOnclickFunctionStep2(){
+                          // (left increase to 400
+                            var iStep2=0;
+                            //the following line will start to move the element to right and down
+                            var vstep2Move1=setInterval(Step2Move1,10);
+                            function Step2Move1(){
+                            elemStep2.style.left= iStep2++ +"px";
+                            
+                             elemStep2.style.top= iStep2/2 +"px"; 
+                             //following will check if 400 is reached and if reached will stop movement and start movement 2
+                                //stop and start move left till left is 20px 
+                            if(iStep2>400){
+                                clearInterval(vstep2Move1);                   vstep2Move2=setInterval(fStep2Move2,10);                  
+                            }
+                            
+                            
+                                
+                                
+                            };
+                            var gStep2=400;
+                            var vstep2Move2;
+                            function fStep2Move2(){
+                                elemStep2.style.left= gStep2-- +"px";
+                                if(gStep2<20){
+                                    clearInterval(vstep2Move2); 
+                                }
+                            }
+                            //
+                            
+                        };
+                            
+
+                    </script>
+                       
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="displayNone" id="step3Div">step3</div>
+                <div class="displayNone" id="step4Div">step4</div>
+                <div class="displayNone" id="step5Div">step5</div>
+                <div class="displayNone" id="step6Div">step6</div>
+                
+                
+                
+                
+                
+                <style>
+                    .displayNone{
+                        display: none;
+                    }
+            
+                </style>
+                <script>
+                                        
+                    var step1Div = document.getElementById("step1Div");
+                    var step2Div = document.getElementById("step2Div");
+                    var step3Div = document.getElementById("step3Div");
+                    var step4Div = document.getElementById("step4Div");
+                    var step5Div = document.getElementById("step5Div");
+                    var step6Div = document.getElementById("step6Div");
+                    
+                    
+                    function showStep1(){
+                        step1Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep2(){
+                        step2Div.classList.remove("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep3(){
+                        step3Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep4(){
+                        step4Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep5(){
+                        step5Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep6(){
+                        step6Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        
+                    }
+                
+                </script>
+                    
+            
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div id="secondExercise">    
+                <h2>OOP Exercise/Demo</h2>
+            </div>
+            <div id="thirdExercise">   
+                <h2>Javascript slideshow</h2>
+            </div> 
+            <div id="fourthExercise">
+                <h2>Menu</h2>
+            </div>    
+        </div><!-- block ends -->
+            
+            
+    </div><!-- main sedction ends -->
+        
+   
+    
+    
+</body>
+
+</html>

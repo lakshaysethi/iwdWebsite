@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:antiquewhite;
+
+
+}
+
+#topNavBar{
+    background-color: black;
+    
+    padding: 0 30px;
+    overflow: hidden;
+}
+
+#topNavBar a{
+    padding: 10px;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    display: block;
+    float: left;
+    
+}
+
+
+
+#topNavBar a +.active{
+    background-color: brown;
+}
+#topNavBar a:hover{
+    background-color: red;
+}
+
+.block{
+    margin: 8px auto;
+    width: 90%;
+    background-color: white;
+    overflow: hidden;
+}

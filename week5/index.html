@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 5 Homework</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pageContainer">
+        
+        <div class="topNavBar">
+            <a href="index.html">Homework</a>
+            <a href="classwork.html">Classwork</a>
+            <a href="../index.html">HomePage</a>
+            <a href=""></a>
+        </div>
+        
+        <div class="mainContent">
+            
+            <canvas onclick="drawCircle(event)" id="canvas" width="500" height="500" ></canvas>
+        </div>
+    </div>
+</body>
+<script>
+    var direction = 1;
+    var ex = 180;
+    var canvas = document.getElementById("canvas");    
+    var c = canvas.getContext("2d");
+    c.fillStyle="#CC99FF";
+    c.fillRect(canvas.width-480,canvas.width-480,460,460)
+   c.fillStyle="#33FF99";
+    c.fillRect(340,400,45,85);
+    c.fillRect(115,400,45,85);
+    c.beginPath();
+    c.arc(250,390,80,0,Math.PI*2,false);
+        c.strokeStyle= "black";
+        c.lineWidth="40";
+        c.stroke();
+        
+        c.fill();
+        
+    c.beginPath();
+        c.arc(250,210,110,0,Math.PI*2,false);
+        c.strokeStyle= "black";
+        c.lineWidth="4";
+        c.stroke();
+        c.fillStyle="#33FF99";
+        c.fill();
+    c.beginPath();
+    c.lineWidth="10";
+    c.strokeStyle="red"
+    c.arc(250,219,90,0,Math.PI,false);
+    c.closePath();
+    c.stroke();
+    
+c.beginPath();
+    var a= 180
+    var b=170;
+    var d=70;
+    c.lineWidth="4"
+    c.strokeStyle="green"
+    c.arc(a,b,d,Math.PI,0,false);
+    c.arc(a+150,b,d,Math.PI,0,false);
+    c.closePath();
+    c.stroke();
+    c.fillStyle="yellow"
+    c.fill();
+    
+    c.beginPath();
+    c.fillStyle="black";
+    c.arc(ex,140,10,0,Math.PI*2,false);
+    c.stroke();
+    c.fill();
+    c.beginPath();
+    c.fillStyle="black";
+    c.arc(ex+150,140,10,0,Math.PI*2,false);
+    c.stroke();
+    c.fill();
+    
+    function draw(){
+        
+        c.fillStyle="#CC99FF";
+    c.fillRect(canvas.width-480,canvas.width-480,460,460)
+   c.fillStyle="#33FF99";
+    c.fillRect(340,400,45,85);
+    c.fillRect(115,400,45,85);
+    c.beginPath();
+    c.arc(250,390,80,0,Math.PI*2,false);
+        c.strokeStyle= "black";
+        c.lineWidth="40";
+        c.stroke();
+        
+        c.fill();
+        
+    c.beginPath();
+        c.arc(250,210,110,0,Math.PI*2,false);
+        c.strokeStyle= "black";
+        c.lineWidth="4";
+        c.stroke();
+        c.fillStyle="#33FF99";
+        c.fill();
+    c.beginPath();
+    c.lineWidth="10";
+    c.strokeStyle="red"
+    c.arc(250,219,90,0,Math.PI,false);
+    c.closePath();
+    c.stroke();
+    
+c.beginPath();
+    a= 180
+    b=170;
+    d=70;
+    c.lineWidth="4"
+    c.strokeStyle="green"
+    c.arc(a,b,d,Math.PI,0,false);
+    c.arc(a+150,b,d,Math.PI,0,false);
+    c.closePath();
+    c.stroke();
+    c.fillStyle="yellow"
+    c.fill();
+    
+    c.beginPath();
+    c.fillStyle="black";
+    c.arc(ex,140,10,0,Math.PI*2,false);
+    c.stroke();
+    c.fill();
+    c.beginPath();
+    c.fillStyle="black";
+    c.arc(ex+150,140,10,0,Math.PI*2,false);
+    c.stroke();
+    c.fill();
+        
+    if(ex>230){
+        direction = -1;
+        console.log("-1");
+    }if(ex<130){
+        direction= 1;
+        console.log("1");
+    }
+        ex=ex+direction;
+        
+        console.log("doing it");
+    }
+    
+    
+    setInterval(draw,180);
+    var x;
+    var y;
+    function drawCircle(event){
+         x= event.clientX-40;
+         y= event.clientY-80;
+        alert(x);
+        alert(y);
+        
+    }
+    
+
+    
+    
+</script>
+</html>

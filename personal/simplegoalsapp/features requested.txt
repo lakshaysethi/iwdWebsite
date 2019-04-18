@@ -1,0 +1,17 @@
+goals
+what do I want
+I want 
+money
+how to get moeny
+i wnat to edit the last sentance
+and i want to drag and drop the elements to different locations
+and i want to 
+enter into
+
+implementation:
+https://www.youtube.com/watch?v=e0ihEHxd6vI
+
+well we can do this 
+
+we can add a new array item to the array everytime user presses enter or user presses the button
+and we can add an event listner and we can then take from the list the object and 

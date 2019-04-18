@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="project1Stylesheet.css">
+    <title>Project 1</title>
+    <script>
+        function onMouseOverFunction() {
+            location.reload();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="pageContainer">
+        <!--     onmouseover="onMouseOverFunction()"-->
+        <div id="topNavBar">
+            <ul>
+                <li><a href="../index.html">Lakhay's IWD website Home</a></li>
+                <li><a href="index.html">Project1 page</a></li>
+                <li><a href="storyboardPart1.pdf">StoryBoard Part 1</a></li>
+                <li><a href="storyboardPart2.pdf">StoryBoard Part 2</a></li>
+            </ul>
+        </div>
+        <div id="mainSection">
+            <div id="projectPartsContainer">
+                <a id="aPart1" target="_blank" href="https://www.waiotapu.co.nz/">
+                    <div id="part1">
+                        <div id="scene1">
+
+                            <img id="logo" src="images/logo.png">
+                        </div>
+                        <div id="scene2">
+                            <img id="img1" src="images/img1.jpg">
+                            <img src="images/img2.jpg" id="img2">
+                            <div id="txtAdventure">Go on a Wonderful Adventure!!</div>
+                        </div>
+                        <div id="scene3">
+                            <div id="txt3">NZ's Best Geothermal Park</div>
+                            <div id="txt1">Book Now</div>
+                            <div id="txt2">Made by Lakshay Sethi
+                                <br>ID 1487100</div>
+                            <img id="endLogo" src="images/logo.png">
+                        </div>
+
+                    </div>
+                </a>
+
+                <div id="part2and3Container">
+
+                    <div id="part3Container">
+                        <script src="script.js"></script>
+
+                        <div id="stepsPart3">
+
+                            <button onclick="showDemo1()">Step 1</button>
+                            <button onclick="showDemo2()">Step 2</button>
+                            <button onclick="showDemo3()">Step 3</button>
+                            <!--                <button onclick="showDemo4()">Step 4</button>-->
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div id="part3Tutorial">
+                        
+                           
+                            <div id="demo1">
+                             
+                                <div class="P1">
+                                    <h2>STEP 1: Using different User input to change the webpage appearence.</h2>
+                                    <br>
+                                    <h3>We can use the <code>&lt;input&gt;</code> tag for taking user input like Text and Options and then use the imput chosen by the user to change different elements on the webpage </h3>
+                                    <br>
+                                    <button onclick="nextP(this)">Next</button>
+                                </div>
+
+                                <div class="P2">
+                                    <h3>Here we will see how we can make a simple Text Decoration App using 2 input types- Textbox and Radio Button</h3>
+                                    <br> Enter Text:
+                                    <input value="Lakshay" id="textDemo1" type="text">
+                                    <br> Select Style :
+                                    <input name="decorate" type="radio" onclick="normalClicked()">None
+                                    <input name="decorate" type="radio" onclick="boldClicked()">Bold
+                                    <input name="decorate" type="radio" onclick="italicClicked()">Italic
+                                    <input name="decorate" type="radio" onclick="underlineClicked()">Underlined
+                                    <br>
+                                    <p id="pTDA"></p>
+                                    <button onclick="nextP(this)">Next</button>
+                                </div>
+
+                                <div class="P3">
+                                    <h3>the previous demo was achieved using the following stratigies.</h3>
+                                    <br>
+                                    The text inside the textbox was obtained usng using <code>Object.value</code> .
+                                    <br><br><br>
+                                    The <code>font-weight</code> , <code>font-style</code> and <code>text-decoration</code> were changed by using the DOM style property using JavaScript syntax <code>object.style.property="string"</code>.
+                                    <br>
+                                    
+                                </div>
+                            
+                            </div>
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <div id="demo2">
+                                <div class="P1">
+                                   <h2> How user can Place order for a consummer good </h2><br><br>
+                                   <h3>In this tutorial we will see how we can use the <code>&lt;input&gt;</code> for checkboxes and <code>&lt;select&gt;</code> for dropdown Menu</h3><br>
+                                   <button onclick="nextP(this)">Next</button>
+                                </div>
+                                <div class="P2">
+                                 <div id="ProductPage">
+                                     
+                                    USB Drive <br>
+                                   <img src="images/part3/usb.png" alt="">
+                                   
+                                   <form>
+                                     Select Capacity:
+                                      <select id="capacity" name="capacity">
+                                        <option value="128Gb">128Gb</option>
+                                        <option value="256Gb">256Gb</option>
+                                        <option value="512Gb">512Gb</option>
+                                        <option  value="1Tb">1Tb</option>
+                                      </select>
+                                      <br>
+                                      Select other options: <br>
+                                      <input id="SFS" value="Super Fast Shipping" type="checkbox"> Super Fast Shipping <br>
+                                      <input id="TCA" value="Add TypeC Adaptor" type="checkbox">Add TypeC Adaptor <br><br>
+                                      
+                                    </form>
+                                    <button onclick="showThankUPage()">1-Tap Buy</button>
+                                    
+                                 </div>
+                                 <div id="thankYouPage" style= "display: none;">
+                                     <h2 id="thankULine"></h2>
+                                 </div>
+                                  
+                                  <br><br><br>
+                                    
+                                   <button onclick="nextP(this)">Next</button>
+                                   </div>
+                                   
+                              
+                                
+                                <div class="P3">
+                                    <h2>the stratigies used to achieve the previous demo are : <br><br> <code>selectObject.value</code> and <code>inputObject.checked</code> were used to check what was the user input and accordingly the Thank you page was generated <br><br> click in step 2 again to try the demo again.
+                                    
+                                    </h2>
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            <div id="demo3">
+                                
+                                <div class="P1">
+                                   <h2>Step 3 -Color Picker and range User Inputs <br><br> in this tutorial we will see a demo of how to use color picker and range User inputs to control the aspects of an animation.</h2>
+                                   
+                                    <button onclick="nextP(this)">Next</button>
+                                </div>
+                                <div class="P2">
+                                  <div id="canvas" style="width: 400px;height: 100px; ">
+                                   <div id="sprite" style="width: 20px; height: 20px; background-color: red;border-radius: 50%;position: absolute; top: 50px;"></div>
+                                    </div>
+                                    Select a color for Sprite:<input id="colorPicker" type="color" onchange="changeColor()"><br><br>
+                                    Select the Speed: <input id="ranger" min="1" max="10" type="range" oninput="changeSpeed()"><br><br>
+                                    <button onclick="nextP(this)">Next</button>
+                                </div>
+                                <div class="P3">
+                                    <h2>In the last demo the <code>colorPickerObject.value</code> and <code>rangeObject.value</code> were used to get the value of user inputted color and range. Then these values were used to manipulate the properties of the sprite. </h2>
+                                </div>
+                                
+                            </div>
+                            
+
+                        </div>
+
+                        <script>
+                            var sprite =document.getElementById("sprite");
+                            var colorPicker= document.getElementById("colorPicker");
+                            var ranger= document.getElementById("ranger");
+                            
+                            var speed = 2;
+                            function changeSpeed(){
+                                speed= parseInt(ranger.value);
+                            }
+                            
+                            function changeColor(){
+                                sprite.style.backgroundColor= colorPicker.value;
+                            }
+                             
+                            var point= 1;
+                            var left = 0;
+                            
+                            function animateSprite(){
+                            
+                                if(point==1){
+                                    left=left + speed;
+                                    
+                                    sprite.style.left = left+"px";
+                                    if(left>380){
+                                        point=2;
+                                    }
+                                    
+                                }
+                                else if(point==2){
+                                    left= (left - speed);
+                                    
+                                    sprite.style.left = left+"px";
+                                    if(left<1){
+                                        point=1;
+                                        left = 0;
+                                    }
+                                }
+                            }
+                            
+                           function showThankUPage(){
+                               var ship=" ";
+                               var typeC=" ";
+                               var SFS= document.getElementById("SFS");
+                               var TCA = document.getElementById("TCA");
+                               var capacity= document.getElementById("capacity").value ;
+                               var votherOptions= otherOptions();
+                               document.getElementById("ProductPage").style.display="none";
+                               document.getElementById("thankYouPage").style.display="block";
+                               document.getElementById("thankULine").innerHTML="Thank You for your purchase.<br><br> USB drive with capacity: "+capacity + votherOptions +"<br> will be sent to your Default Address.";
+                               
+                              
+                               
+                               
+                               function otherOptions(){
+                                   
+                                   if(SFS.checked){
+                                       ship=" with Super Fast Shipping";
+                                   }else{
+                                       ship=" with Standard Shipping";
+                                   }
+                                   if(TCA.checked){
+                                    typeC=" and Extra Type C adapter " ; 
+                                    }
+                                   return typeC+ship;
+                               }
+
+                           }
+                           
+
+                            var result = document.getElementById("pTDA");
+
+                            function normalClicked() {
+                                result.style.fontWeight = "normal";
+                                result.style.fontStyle = "normal";
+                                result.style.textDecoration = "none";
+                                
+                            }
+
+                            function boldClicked() {
+                                result.style.fontWeight = "Bold";
+                                result.style.fontStyle = "normal";
+                                result.style.textDecoration = "none";
+                            }
+
+                            function italicClicked() {
+                                result.style.fontWeight = "normal";
+                                result.style.fontStyle = "Italic";
+                                result.style.textDecoration = "none";
+                            }
+
+                            function underlineClicked() {
+                                result.style.fontWeight = "normal";
+                                result.style.fontStyle = "normal";
+                                result.style.textDecoration = "underline";
+                            }
+
+                            var paraDemo1 = document.getElementById("pTDA");
+                            var textDemo1 = document.getElementById("textDemo1");
+                            setInterval(writeTextToPara, 10);
+
+                            function writeTextToPara() {
+                                paraDemo1.innerHTML = textDemo1.value;
+                            }
+
+                            function nextP(a) {
+                                a.parentElement.style.display = "none";
+                            }
+
+                            var demo4 = document.getElementById("demo4");
+                            var demo3 = document.getElementById("demo3");
+                            var demo2 = document.getElementById("demo2");
+                            var demo1 = document.getElementById("demo1");
+
+                            function showDemo1() {
+                                
+                                //    demo4.style.display="none";
+                                demo3.style.display = 'none';
+                                demo2.style.display = 'none';
+                                demo1.style.display = 'block';
+                                
+                                var childCnt = demo1.childElementCount;
+                                var divChild = demo1.firstElementChild;
+                                divChild.style.display="block";
+                                for(var i=1;i<childCnt;i++){
+                                    divChild= divChild.nextElementSibling;
+                                    divChild.style.display="block";
+                                }
+                                clearInterval(animateSprite);
+                            }
+
+                            function showDemo2() {
+                                //       demo4.style.display="none";
+                                demo3.style.display = 'none';
+                                demo2.style.display = 'block';
+                                demo1.style.display = 'none';
+                                
+                                var childCnt = demo2.childElementCount;
+                                var divChild = demo2.firstElementChild;
+                                divChild.style.display="block";
+                                document.getElementById("ProductPage").style.display="block";
+                                document.getElementById("thankYouPage").style.display="none";
+                                
+                                for(var i=1;i<childCnt;i++){
+                                    divChild= divChild.nextElementSibling;
+                                    divChild.style.display="block";
+                                }
+                                clearInterval(animateSprite);
+
+                            }
+
+                            function showDemo3() {
+                                //       demo4.style.display="none";
+                                demo3.style.display = 'block';
+                                demo2.style.display = 'none';
+                                demo1.style.display = 'none';
+                                
+                                var childCnt = demo3.childElementCount;
+                                var divChild = demo3.firstElementChild;
+                                divChild.style.display="block";
+                                
+                                for(var i=1;i<childCnt;i++){
+                                    divChild= divChild.nextElementSibling;
+                                    divChild.style.display="block";
+                                }
+                                setInterval(animateSprite,10);
+
+                            }
+
+                            function showDemo4() {
+                                //       demo4.style.display="block";
+                                demo3.style.display = 'none';
+                                demo2.style.display = 'none';
+                                demo1.style.display = 'none';
+
+                            }
+                        </script>
+                    </div>
+
+                    <div id="part2">
+
+                        <div id="part2Scene1">
+                            <img id="windowSlider" src="https://i.imgur.com/bT9byOg.png" alt="">
+                            <img id="scene1window" src="https://i.imgur.com/pfMrcLo.png" alt="">
+
+                        </div>
+                        <div id="part2Scene2">
+                            <img id="beach" src="https://i.imgur.com/43sB9sI.png" alt="">
+                            <div id="part2Txt1">Aussie
+                                <br>48hr sale</div>
+                            <div id="part2txt2"><sup>$</sup>200<b>off</b>
+                                <br><i>return fares to Aussie</i>
+                            </div>
+                            <div id="bottomBlack">
+                                Card payment fee of $12pp applies.
+                                <br>Offer is available ex all Air New Zealand serviced domestic airports.</div>
+                            <div id="circle2">use promo code
+                                <br><b>AUSSIE200</b>
+                                <br>when booking online</div>
+                            <div id="bottomBlack2">promo code cannot be used in conjunction with any other offer or discount</div>
+
+                        </div>
+
+                        <div id="part2Scene3">
+                            <div id="seatSuit">Choose your Seat to Suit</div>
+                            <img src="images/part2/class.png" alt="">
+
+                        </div>
+
+                        <div id="part2Scene4">
+                            <img id="airNZlogo" src="images/part2/AirNzlogo.png" alt="">
+                            <div id="scene4txt1">Aussie 48hr Sale</div>
+                            <div id="scene4txt2">BOOK
+                                <br>NOW</div>
+                            <div id="scene4txt3">Sale ends midnight 5 March 2019</div>
+
+                            <div id="scene4txt4">Travel periods and conditions apply</div>
+                            <div id="bottomImages">
+                                <img id="reload" src="images/part2/reload.png" alt="">
+                                <img src="images/part2/star.png" alt="">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

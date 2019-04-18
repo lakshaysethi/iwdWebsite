@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 3 Classwork</title>
+   
+    <link rel="stylesheet" href="week3style.css"> 
+     <style>
+      
+        
+        .block{
+            margin: 3% 15%;
+            padding: 10px;
+            background-color: white;
+            
+        }
+        
+         .displayNone{
+             display: none;
+         }
+    </style>
+</head>
+
+
+<body>
+    
+    <div id="topNavBar">
+        <ul>
+            <li><a href="classwork.html">Classwork Week 3</a></li>
+            <li><a href="homework.html">Homework Week 3</a></li>
+            <li><a href="../index.html">Homepage</a></li>
+        
+        
+        </ul>
+    </div>
+    
+    <div id="mainSection">
+       <!-- in block there is everything -->
+        <div class="block">
+            <h1 style="text-align: center;">ClassWork week 3</h1>
+                
+            <div id="firstExercise">
+                <h2>Animation With HTML 5</h2>
+                
+                <div id="buttons">
+                    <button onclick="showStep1()">step1</button>
+                    <button onclick="showStep2()">step2</button>
+                    <button onclick="showStep3()">step3</button>
+                    <button onclick="showStep4()">step4</button>
+                    <button onclick="showStep5()">step5</button>
+                    <button onclick="showStep6()">step6</button>
+                </div>
+                <div id="step1Div" style="width: 580px;height: 50px; border: solid 4px black;">
+                    <div id="elem" style="position: relative; width: 20px; height: 50px;background-color: aquamarine;"></div>
+                        <script>
+                        //onclick the elem it move right 
+                        var elem = document.getElementById("elem");
+                        var left = 0;
+                        var move;
+                            elem.onclick=function myfunction(){
+                             move =setInterval(movElem, 10);
+                        
+                        }
+                            
+                        function movElem(){
+                        if(left>400){
+                         clearInterval(move);   
+                        }
+                         elem.style.left= left++ +"px";
+                        
+                        }
+                        </script>
+                </div>
+                 
+                   <!-- box -->
+                <div id="step2Div" class="displayNone"   style="width: 580px;height: 580px; border: solid 4px black;">
+                    <!-- blue move element -->
+                    <div id="elemStep2" style="position: relative; width: 20px; height: 50px;background-color: aquamarine;"></div>
+                    
+                    
+                       
+                    <script>
+                    //on click - move right and down  till 400px right then move left
+                        
+                        //how to move ? -setInterval
+                        
+                        //use long names 
+                        
+                        //pseudo code:
+                        //var nameofelement = get elemebt by id elemstep2;
+                        var elemStep2 = document.getElementById("elemStep2");
+                        //nameofelement.onclick: do following slowly:
+                        elemStep2.onclick=function myOnclickFunctionStep2(){
+                          // (left increase to 400
+                            var iStep2=0;
+                            //the following line will start to move the element to right and down
+                            var vstep2Move1=setInterval(Step2Move1,10);
+                            function Step2Move1(){
+                            elemStep2.style.left= iStep2++ +"px";
+                            
+                             elemStep2.style.top= iStep2/2 +"px"; 
+                             //following will check if 400 is reached and if reached will stop movement and start movement 2
+                                //stop and start move left till left is 20px 
+                            if(iStep2>400){
+                                clearInterval(vstep2Move1);                  
+                                vstep2Move2=setInterval(fStep2Move2,10);                  
+                            }
+                            
+                            
+                                
+                                
+                            };
+                            var gStep2=400;
+                            var vstep2Move2;
+                            function fStep2Move2(){
+                                elemStep2.style.left= gStep2-- +"px";
+                                if(gStep2<20){
+                                    clearInterval(vstep2Move2); 
+                                }
+                            }
+                            //
+                            
+                        };
+                            
+
+                    </script>
+                       
+                </div>
+               
+                <div id="step3Div" class="displayNone" style="width: 580px;height: 580px; border: solid 4px black;">
+                   
+                    <div id="elemStep3" style="position: relative; width: 20px; height: 50px;background-color: aquamarine;"></div>
+                    
+                    <script>
+                    var elemStep3= document.getElementById("elemStep3");
+                        var iStep3=0;
+                        var gStep3 =400;
+                        var hStep3 =20;
+                        var vStep3Move1;
+                        var vStep3Move2;
+                        var vStep3Move3;
+                        
+                        elemStep3.onclick=function onclickFunctionStep3(){
+                          vStep3Move1= setInterval(fStep3Move1,10);
+                            function fStep3Move1(){
+                                //move it 
+                                elemStep3.style.left= iStep3++ +"px";
+                                elemStep3.style.top= iStep3/2 +"px";
+                                
+                                
+                                //if statement for stopping vStep3Move1
+                                if(iStep3>400){
+                                    clearInterval(vStep3Move1);
+                                    vStep3Move2 = setInterval(fStep3Move2,10);
+                                }
+                            
+                            }
+                            function fStep3Move2(){
+                                elemStep3.style.left= gStep3-- +"px";
+                                if(gStep3<20){
+                                    clearInterval(vStep3Move2);
+                                   vStep3Move3= setInterval(fStep3Move3,10);
+                                }
+                            }
+                            function fStep3Move3(){
+                                elemStep3.style.left= hStep3++ +"px";
+                                elemStep3.style.top= (hStep3/2)+200 +"px";
+                                if(hStep3> 400){
+                                    clearInterval(vStep3Move3);
+                                }
+                            }
+                        };
+                    
+                    </script>
+                    
+                </div>
+               
+                <div id="step4Div" class="displayNone"  style="position: relative;">
+                    <img src="flowers-daizy.JPG" alt="" style="position: relative;" >
+                    <img id="imgStep4Fly" src="butterfly.gif" alt=""  style="position:absolute;   top: 0; left: 0;">
+                    
+                    <script>
+                    window.onload=function myonloadfunction(){
+                        var vStep4Fly= document.getElementById("imgStep4Fly");
+                    vStep4Fly.onclick= function step4onclickfunction(){
+                        move(vStep4Fly);
+                    }
+                        
+                        
+                        
+                    
+                    function move(elem) { 
+                    var left = 0;
+                    var top = 0;
+                    var point=0;
+                        var id = setInterval(doMove, 10) // draw every 10ms 
+                        function doMove() {
+
+                            if ( point==0) {
+                                left++;  // update parameters 
+                                top++;
+                                elem.style.left = left + 'px'; // show frame 
+                                elem.style.top = top + 'px'; 
+                                if (left >300)  
+                                {
+                                    point=1;
+                                }
+                            }
+                            if ( point==1) {
+                                left--;  // update parameters		
+                                elem.style.left = left + 'px'; // show frame 
+                                if (left <20) {
+                                    point=2;  //check finish condition
+
+                                }
+                            }
+
+                            if ( point==2) {
+                                left++;  // update parameters		
+                                top=top + 0.4;
+                                elem.style.left = left + 'px'; // show frame 
+                                elem.style.top = top + 'px'; 
+                                if (top >580) {
+                                    clearInterval(id);// check finish condition
+
+                                }
+                            }
+
+                          }
+                          
+                        }
+                    }
+                    </script>
+                    
+                    
+                </div>
+                <div  id="step5Div" style="position: relative;" class="displayNone">
+                 <img src="flowers-daizy.JPG" alt="" style="position: relative;" >
+                 <img id="imgStep5Fly" src="butterfly.gif" alt=""  style="position:absolute;   top: 0; left: 0;">
+                    
+                <script>
+                    var snd = new Audio('swan_lake.mp3');
+                    snd.load();
+                    window.onload=function myonloadfunctionStep5(){
+                        var vStep5Fly= document.getElementById("imgStep5Fly");
+                    vStep5Fly.onclick= function step5onclickfunction(){
+                        moveStep5(vStep5Fly);
+                    }
+                        
+                        
+                        
+                    
+                    function moveStep5(elem) { 
+                    var left = 0;
+                    var top = 0;
+                    var point=0;
+                        var id = setInterval(doMoveStep5, 10) // draw every 10ms 
+                        function doMoveStep5() {
+                               snd.play(); 
+                            if ( point==0) {
+                                left++;  // update parameters 
+                                top++;
+                                elem.style.left = left + 'px'; // show frame 
+                                elem.style.top = top + 'px'; 
+                                if (left >300)  
+                                {
+                                    point=1;
+                                }
+                            }
+                            if ( point==1) {
+                                left--;  // update parameters		
+                                elem.style.left = left + 'px'; // show frame 
+                                if (left <20) {
+                                    point=2;  //check finish condition
+
+                                }
+                            }
+
+                            if ( point==2) {
+                                left++;  // update parameters		
+                                top=top + 0.4;
+                                elem.style.left = left + 'px'; // show frame 
+                                elem.style.top = top + 'px'; 
+                                if (top >580) {
+                                    snd.pause();
+                                    clearInterval(id);// check finish condition
+
+                                }
+                            }
+
+                          }
+                          
+                        }
+                    }
+                    </script>
+                
+                
+                </div>
+                
+                
+                <div  id="step6Div" style="position: relative;" class="displayNone">
+                
+                <img src="flowers-daizy.JPG" alt="" style="position: relative;" >
+                    <img id="imgStep6Fly" src="butterfly.gif" alt=""  style="position:absolute;   top: 0; left: 0;">
+                    
+                    <script>
+                    
+                    window.onload=function myonloadfunctionStep6(){
+                        var vStep6Fly= document.getElementById("imgStep6Fly");
+                    vStep6Fly.onclick= function step6onclickfunction(){
+                        moveStep6(vStep6Fly);
+                    }
+                        
+                        
+                        
+                    
+                    function moveStep6(elem) { 
+                    var left = 0;
+                    var top = 0;
+                    var point=0;
+                        var id = setInterval(doMove, 10) // draw every 10ms 
+                        function doMove() {
+                               snd.play();
+                            switch (point){
+                                    
+                            case 0: 
+                                left++;  // update parameters 
+                                top++;
+                                elem.style.left = left + 'px'; // show frame 
+                                elem.style.top = top + 'px'; 
+                                if (left >300)  
+                                {
+                                    point=1;
+                                }
+                            
+                                    break;
+                                case 1: 
+                                left--;  // update parameters		
+                                elem.style.left = left + 'px'; // show frame 
+                                if (left <20) {
+                                    point=2;  //check finish condition
+
+                                }
+                            
+                                    break;
+                                case 2: 
+                                left++;  // update parameters		
+                                top=top + 0.4;
+                                elem.style.left = left + 'px'; // show frame 
+                                elem.style.top = top + 'px'; 
+                                if (top >580) {
+                                    snd.pause();
+                                    clearInterval(id);// check finish condition
+
+                                }
+                            break;
+
+                         }
+                        }
+                          
+                        }
+                    }
+                    </script>
+                
+                </div>
+                
+                
+                
+                
+                
+                <style>
+                    .displayNone{
+                        display: none;
+                    }
+            
+                </style>
+                <script>
+                                        
+                    var step1Div = document.getElementById("step1Div");
+                    var step2Div = document.getElementById("step2Div");
+                    var step3Div = document.getElementById("step3Div");
+                    var step4Div = document.getElementById("step4Div");
+                    var step5Div = document.getElementById("step5Div");
+                    var step6Div = document.getElementById("step6Div");
+                    
+                    
+                    function showStep1(){
+                        step1Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep2(){
+                        step2Div.classList.remove("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep3(){
+                        step3Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep4(){
+                        step4Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep5(){
+                        step5Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        step6Div.classList.add("displayNone");
+                        
+                    }
+                    function showStep6(){
+                        step6Div.classList.remove("displayNone");
+                        step2Div.classList.add("displayNone");
+                        step3Div.classList.add("displayNone");
+                        step4Div.classList.add("displayNone");
+                        step5Div.classList.add("displayNone");
+                        step1Div.classList.add("displayNone");
+                        
+                    }
+                
+                </script>
+                    
+            
+            </div>  
+            
+            <div id="secondExercise">    
+                <h2>OOP Exercise/Demo</h2>
+                <style>
+                    .SEblock{
+                        margin: 1%;
+                        background-color: cornflowerblue;
+                        display: inline-block;
+                        width: 500px;
+                        height: auto;
+                        padding: 30px;
+                    }
+                </style>
+                <div class="SEblock">
+                    <a href=""></a>
+                
+                </div>
+             
+            </div>
+            <div id="thirdExercise">   
+                <h2>Javascript slideshow</h2>
+            </div> 
+            <div id="fourthExercise">
+                <h2>Menu</h2>
+            </div>    
+        </div><!-- block ends -->
+            
+            
+    </div><!-- main sedction ends -->
+        
+   
+    
+    
+</body>
+
+</html>

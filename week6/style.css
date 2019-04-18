@@ -1,0 +1,32 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#topNavBar{
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10%;
+    background-color: black;
+    height: auto;
+}
+#topNavBar a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    float: left;
+}
+
+#topNavBar a:hover{
+    background-color: red;
+}
+#mainContent{
+    padding: 0 10%;
+}
+#canvas{
+   
+    border: 1px solid black;
+    margin: 40px;
+}

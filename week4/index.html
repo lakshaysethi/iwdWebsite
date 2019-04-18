@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week4 IWD LAKSHAY SETHI</title>
+    <link rel="stylesheet" href="week4styles.css">
+</head>
+<body>
+    
+    <div id="pageContainer">
+        
+        <div id="topNavBar">
+            <a href="../index.html">Homepage</a>
+            <a href="index.html" class="active">Homework week 4</a>
+            <a href="classwork.html">ClassWork Week 4</a>
+        </div>
+        
+        
+        <div id="mainContent">
+           <script>
+             if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("GET","subjects.xml",false);
+	xmlhttp.send();
+	xmlDoc=xmlhttp.responseXML; 
+               
+            //object declartion- subject
+          function subject(name, classNo,teacher,classroom) {
+            this.name = name;
+            this.classNo=classNo;
+            this.teacher=teacher;
+            this.classroom=classroom;
+            
+
+          }
+        
+    //array of subjects for holding subjectObjects       
+          var subjects = []; 
+	           
+       
+	
+    //getting an array of papers  from the xml          
+    var paper=xmlDoc.getElementsByTagName("paper");
+	
+	var name='';
+	var classNo='';
+	var teacher='';
+    var classroom='';
+	for (i=0; i<paper.length; i++) { 		
+		name=paper[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+		classNo=paper[i].getElementsByTagName("class")[0].childNodes[0].nodeValue;
+		teacher=paper[i].getElementsByTagName("teacher")[0].childNodes[0].nodeValue;
+        
+        classroom=paper[i].getElementsByTagName("classroom")[0].childNodes[0].nodeValue;
+        
+		var subjectObject =new subject(name, classNo, teacher,classroom);
+	
+        subjects[i]=subjectObject;
+			
+	}
+    
+//
+//            function addSubjects(){
+//              var subject = new subject(prompt("please Eneter Product Name."),prompt("please enter Price"),prompt("please enter image name."));
+//              subjects.push(prod);
+//                show_subjects();
+//          }
+
+            
+            
+            
+          function displayPapers() {
+           
+            var table = document.getElementById('subjectsTable');
+              table.innerHTML="";
+            for (var i = 0; i < subjects.length; i++) {
+
+              var row = table.insertRow(i);
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              var cell3 = row.insertCell(2);
+              
+              var cell4 = row.insertCell(3);
+
+//              var cell5 = row.insertCell(4);
+
+              cell1.innerHTML = subjects[i].name;
+              cell2.innerHTML =  subjects[i].classNo;
+              cell3.innerHTML = subjects[i].teacher ;
+              cell4.innerHTML = subjects[i].classroom;    
+             
+            }
+          }
+
+            </script>
+            
+             <div class="block">
+                <h1>Homework Week 4</h1>
+                <button onclick="displayPapers()">Display Papers</button><br>
+                <button>add subject</button>
+                 <table border='1' id="subjectsTable"></table>
+
+                
+            </div>
+        </div>
+        
+        
+        <footer>
+            
+        </footer>
+    </div>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.example_path {
+	position: relative;
+	overflow: hidden;
+	width: 580px;
+	height: 50px;
+	border: 3px solid #000;
+}
+
+.example_path .example_block {
+	position: absolute;
+	background-color: green;
+	width: 30px;
+	height: 40px;
+	padding-top: 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+	white-space: nowrap;
+}
+</style>
+<script type="text/javascript">
+function move(elem) {
+
+  var left = 0;
+
+  function frame() {
+    
+    left++; // update parameters 
+    
+    elem.style.left = left + 'px'; // show frame 
+
+    if (left == 500)  // check finish condition
+      clearInterval(id);	  
+  //look at http://www.w3schools.com/jsref/met_win_clearinterval.asp
+  }
+  var id = setInterval(frame, 10); // draw every 10ms  
+//setInterval look at  http://www.w3schools.com/jsref/met_win_setinterval.asp
+
+}
+
+</script>
+</head>
+<body>
+<div onclick="move(this.children[0])" class="example_path">
+ <div class="example_block" id="gr"></div>
+</div>
+
+</body>
+</html>

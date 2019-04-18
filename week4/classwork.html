@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Week4 IWD LAKSHAY SETHI</title>
+    <link rel="stylesheet" href="week4styles.css">
+  </head>
+
+  <body>
+
+    <div id="pageContainer">
+
+      <div id="topNavBar">
+        <a href="../index.html">Homepage</a>
+        <a href="index.html">Homework week 4</a>
+        <a href="classwork.html" class="active">ClassWork Week 4</a>
+      </div>
+
+
+      <div id="mainContent">
+
+        <script>
+          function product(productName, price,image) {
+            this.productName = productName;
+            this.price = price;
+              this.image=image;
+            
+
+          }
+          var products = []; //Array declaration - empty, and it will be load from XML file
+// XML -The XMLHttpRequest object is used to exchange data with a server behind the scenes.
+
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("GET","product_list.xml",false);
+	xmlhttp.send();
+	xmlDoc=xmlhttp.responseXML; 
+	var x=xmlDoc.getElementsByTagName("Product");
+	
+	var pName='';
+	var pPrice=0;
+	var pImage='';
+	for (i=0; i<x.length; i++) { 		
+		pName=x[i].getElementsByTagName("ProductName")[0].childNodes[0].nodeValue;
+		pPrice=Number(x[i].getElementsByTagName("Price")[0].childNodes[0].nodeValue);
+		pImage=x[i].getElementsByTagName("Image")[0].childNodes[0].nodeValue;	
+		var prod =new product(pName, pPrice, pImage);
+		products[i]=prod;
+			
+	}
+
+            function addProducts(){
+              var prod = new product(prompt("please Eneter Product Name."),prompt("please enter Price"),prompt("please enter image name."));
+              products.push(prod);
+                show_products();
+          }
+
+            
+            
+            
+          function show_products() {
+           
+            var table = document.getElementById('productTable');
+              table.innerHTML="";
+            for (var i = 0; i < products.length; i++) {
+
+              var row = table.insertRow(i);
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              var cell3 = row.insertCell(2);
+              
+              var cell4 = row.insertCell(3);
+//              var cellName = 's' + i;
+//              cell4.setAttribute('name', cellName);// for checkboxes
+              var cell5 = row.insertCell(4);
+//              var cellName5 = 'ss' + i;
+//              cell5.setAttribute('name', cellName5); // this is for quantity
+              cell1.innerHTML = products[i].productName;
+              cell2.innerHTML = '$' + products[i].price;
+              cell3.innerHTML = '<img src="images/' + products[i].image + '" />';
+             
+
+              var checkbox = document.createElement("input");
+              var cname = 'ch' + i;
+
+              checkbox.setAttribute('type', 'checkbox');
+              checkbox.setAttribute('name', i);
+              checkbox.setAttribute('id', cname);
+              checkbox.setAttribute('value', products[i].price);
+              checkbox.checked = false;
+              checkbox.setAttribute('onclick', 'myChange(this.value, this.name)');
+              cell4.appendChild(checkbox);
+
+              var quantityInput = document.createElement('input');
+              var qname = 'q' + i;
+              quantityInput.setAttribute('type', 'number');
+              quantityInput.setAttribute('name', qname);
+              quantityInput.setAttribute('id', qname);
+              quantityInput.setAttribute('value', 0);
+              quantityInput.setAttribute('style', 'width:35px;');
+              cell5.appendChild(quantityInput);
+            }
+          }
+
+          function calculate_cost() {
+            var result = '';
+            var ncheckbox = '';
+            var qinput = '';
+            var total = 0;
+            for (var i = 0; i < products.length; i++) {
+              ncheckbox = 'ch' + i;
+              qinput = 'q' + i;
+              var x = document.getElementById(ncheckbox);
+              if (document.getElementById(ncheckbox).checked) {
+                //product slected
+                total = total + Number(document.getElementById(ncheckbox).value) * Number(document.getElementById(qinput).value);
+
+              }
+
+
+
+            }
+            document.getElementById('calcost').innerHTML = 'Total to pay =$' + total;
+
+
+          }
+
+          function myChange(val, qn) {
+            if (document.getElementById('ch' + qn).checked)
+              document.getElementById('q' + qn).value = 1;
+            else document.getElementById('q' + qn).value = 0;
+          }
+
+        </script>
+        
+        <h1>Shop</h1>
+        
+        <button onclick="addProducts()"> add a product</button>
+        <button type="button" onclick="show_products()">display all products</button>
+        <table border='1' id="productTable">
+        </table>
+        <button type="button" onclick="calculate_cost()">enter</button>
+        <p id="calcost"></p>
+      </div>
+
+
+      <footer>
+
+      </footer>
+    </div>
+
+
+
+  </body>
+
+</html>
