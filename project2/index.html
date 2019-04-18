@@ -25,7 +25,7 @@
             <div class="welcomeScreen">
 
                 <h1>Welcome  to Hari Whakangahau Cinema </h1>
-                <button>View Shows and Times</button> <br>
+                <button onclick="viewShowTimesScreen()">View Shows and Times</button> <br>
                 please login  or register to Book Tickets <br>
                 <button onclick="showLoginScreen()">Login</button>
                 
@@ -40,7 +40,7 @@
             <div class="registerScreen">
                 regester for new account
                 <button onclick="">Register</button>
-                <button>Login In instead</button>
+                <button onclick="showLoginScreen()">Login instead</button>
             </div>
             
             
@@ -53,8 +53,8 @@
                 <input id="passwordInput" type="password" placeholder="password">
                 <button>login</button>
                 Not yet Registered?
-                <button>Register</button>
-                <button>Show Movie Times</button>
+                <button onclick="showRegisterScreen()">Register</button>   
+                <button onclick="viewShowTimesScreen()">View Shows and Times</button> <br>
             
 
             </div>
@@ -64,8 +64,8 @@
 
             <div class="showTimes">
                 showtimes
-            
-
+                <button onclick="showLoginScreen()">Login</button>
+                <button onclick="showRegisterScreen()">Register</button>   
             </div>
 
             <div class="bookTickets">

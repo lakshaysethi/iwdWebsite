@@ -20,4 +20,8 @@ function showRegisterScreen(){
 	registerScreen[0].style.display="block";
 }
 
-
+function viewShowTimesScreen(){
+	welcomeScreen[0].style.display="none";
+	registerScreen[0].style.display="none";
+	loginScreen[0].style.display="none";
+}
