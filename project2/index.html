@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Project 2 Homepage</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="jquery.js"></script>
 </head>
 <body>
     <div class="title">
@@ -66,6 +71,10 @@
                 showtimes
                 <button onclick="showLoginScreen()">Login</button>
                 <button onclick="showRegisterScreen()">Register</button>   
+                <div class="showTimesTable">
+                    please select a date<p>Select Date: <input type="text" class="datepicker"></p>
+
+                </div>
             </div>
 
             <div class="bookTickets">
