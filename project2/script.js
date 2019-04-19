@@ -29,7 +29,7 @@ function viewShowTimesScreen(){
 	loginScreen[0].style.display="none";
 }
 
-<<<<<<< HEAD
+
 function registerNewAccount() {
 	var username = document.getElementById("regUsername").value;
 	var password = document.getElementById("regPassword").value;
@@ -102,28 +102,39 @@ function getUser() {
 	
 	//Display book table in <div id="txtBookInfo">
     document.getElementById("userList").innerHTML=txt;
-=======
 
 
 
 // SHOW TIMES SCREEN FUCNTIONALITY 
 
 function showMoviesOnDate(){
-
+	//get date
+	//show table of movies and time on date in cinema halls 
 }
 
-function movie(previewDate1,previewDate2,time1,time2){
+function movie(previewDate1,previewDate2,time1,time2,cinemaHall){
 	this.previewDate1 =previewDate1;
 	this.previewDate2 = previewDate2;
 	this.time1=time1;
 	this.time2= time2;
+
 }
 
-function assignDatesAndTimeToMovie(){
-	// everyday there will be a movie because Requirement is 
+
+
+
+function assignDatesTimeHallToMovie(){
+	// everyday there will be 4 movie because Requirement is 
 	//minimum two different movie sessions per day for each cinema room
-	//means 4 movies each day
+	//lets keep times fixed of 10 am and 2pm
+	//everyday at 10 am there will be 1 moie in 
 
 
->>>>>>> 0c38c962a2b26dae29f6502038d7b76a2af89801
 }
+//login and register page functionality
+var userLoggedIn= null;
+
+function register(){
+
+}
+
