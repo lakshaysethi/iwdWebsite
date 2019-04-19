@@ -44,7 +44,7 @@
 
             <div class="registerScreen">
                 regester for new account
-                <button onclick="">Register</button>
+                <button onclick="register()">Register</button>
                 <button onclick="showLoginScreen()">Login instead</button>
             </div>
             
@@ -69,20 +69,27 @@
 
             <div class="showTimes">
                 showtimes
-                <button onclick="showLoginScreen()">Login</button>
-                <button onclick="showRegisterScreen()">Register</button>   
-                <div class="showTimesTable">
-                    <p>Please select a date: <input type="text" id="datepicker"></p>
-
-                </div>
+                
+                <p>Please select a date: <input type="text" id="datepicker"></p>
                 <button onclick="showMoviesOnDate()" id="submitDate">Submit</button>
+
+                <table id="showTimesTable">
+                    
+                </table>
+
+                <p id="showtimesPara">
+                    please login or register to Book Tickets
+                    <button onclick="showLoginScreen()">Login</button>
+                    <button onclick="showRegisterScreen()">Register</button>   
+                </p>
+                
 
 
             </div>
 
             <div class="bookTickets">
                 
-
+                book tickets
                 
             </div>
 
