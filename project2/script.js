@@ -117,6 +117,7 @@ function movie(previewDate1,previewDate2,time1,time2){
 	this.time1=time1;
 	this.time2= time2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 
@@ -131,11 +132,18 @@ function assignDatesTimeHallToMovie(){
 function assignDatesAndTimeToMovie(){
 	// everyday there will be a movie because Requirement is 
 >>>>>>> parent of f2ebee5... regisiter and show times
+=======
+}
+
+function assignDatesAndTimeToMovie(){
+	// everyday there will be a movie because Requirement is 
+>>>>>>> parent of f2ebee5... regisiter and show times
 	//minimum two different movie sessions per day for each cinema room
 	//means 4 movies each day
 
 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 //login and register page functionality
 var userLoggedIn= null;
@@ -144,5 +152,7 @@ function register(){
 
 }
 
+=======
+>>>>>>> parent of f2ebee5... regisiter and show times
 =======
 >>>>>>> parent of f2ebee5... regisiter and show times
