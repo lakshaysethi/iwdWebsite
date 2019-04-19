@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<User>
-	<username>lakshaysethi</username>
-	<password>12345</password>
-	<name>Lakshay Sethi</name>
-</User>
+<UserList>
+	<User>
+		<Username>lakshaysethi</Username>
+		<Password>12345</Password>
+		<Name>Lakshay Sethi</Name>
+	</User>
+</UserList>

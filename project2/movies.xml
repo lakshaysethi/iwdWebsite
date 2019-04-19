@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<movie>
+	<id>1</id>
+	<title>
+		Despicable Me 2
+	</title>
+	
+</movie>
+
+<movie>
+	<id>2</id>
+	<title>
+		Moana
+	</title>
+	
+</movie>
+
+<movie>
+	<id>3</id>
+	<title>
+		Die Hard 4
+	</title>
+	
+</movie>
+
+<movie>
+	<id>4</id>
+	<title>
+		Knight and Day
+	</title>
+	
+</movie>
+
+<movie>
+	<id>5</id>
+	<title>The Amazing SpiderMan 1 </title>
+</movie>
+<movie>
+	<id>6</id>
+	<title>The Amazing SpiderMan 2</title>
+</movie>
+<movie>
+	<id>7</id>
+	<title>The Amazing SpiderMan 3 </title>
+</movie>
+<movie>
+	<id>8</id>
+	<title>The Amazing SpiderMan 4 </title>
+</movie>

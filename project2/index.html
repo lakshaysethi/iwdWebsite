@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Project 2 Homepage</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="jquery.js"></script>
 </head>
 <body>
     <div class="title">
@@ -25,7 +30,7 @@
             <div class="welcomeScreen">
 
                 <h1>Welcome  to Hari Whakangahau Cinema </h1>
-                <button onclick="viewShowTimesScreen()">View Shows and Times</button> <br>
+                <button onclick="viewShowTimesScreen()">View Movies and Times</button> <br>
                 please login  or register to Book Tickets <br>
                 <button onclick="showLoginScreen()">Login</button>
                 
@@ -37,10 +42,30 @@
 
 
 
-            <div class="registerScreen">
-                regester for new account
-                <button onclick="">Register</button>
+            <div class="registerScreen" id="userList">
+                Register for a New Account
                 <button onclick="showLoginScreen()">Login instead</button>
+
+                <form action="#" name="frmRegister" onsubmit="return registerNewAccount(this)">
+                    <table id="regTable">
+                        <tr>
+                            <td>Username</td>
+                            <td><input id="regUsername" name="regUsername" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input id="regPassword" name="regPassword" type="password"></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><input id="regName" name="regName" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><button>Register</button></td>
+                            <td><button onclick="">Cancel</button></td>
+                        </tr>
+                    </table>
+                </form>                
             </div>
             
             
@@ -66,6 +91,13 @@
                 showtimes
                 <button onclick="showLoginScreen()">Login</button>
                 <button onclick="showRegisterScreen()">Register</button>   
+                <div class="showTimesTable">
+                    <p>Please select a date: <input type="text" id="datepicker"></p>
+
+                </div>
+                <button onclick="showMoviesOnDate()" id="submitDate">Submit</button>
+
+
             </div>
 
             <div class="bookTickets">
