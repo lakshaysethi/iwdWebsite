@@ -108,15 +108,15 @@ function getUser() {
 // SHOW TIMES SCREEN FUCNTIONALITY 
 
 function showMoviesOnDate(){
-	//get date
-	//show table of movies and time on date in cinema halls 
+
 }
 
-function movie(previewDate1,previewDate2,time1,time2,cinemaHall){
+function movie(previewDate1,previewDate2,time1,time2){
 	this.previewDate1 =previewDate1;
 	this.previewDate2 = previewDate2;
 	this.time1=time1;
 	this.time2= time2;
+<<<<<<< HEAD
 
 }
 
@@ -125,12 +125,18 @@ function movie(previewDate1,previewDate2,time1,time2,cinemaHall){
 
 function assignDatesTimeHallToMovie(){
 	// everyday there will be 4 movie because Requirement is 
+=======
+}
+
+function assignDatesAndTimeToMovie(){
+	// everyday there will be a movie because Requirement is 
+>>>>>>> parent of f2ebee5... regisiter and show times
 	//minimum two different movie sessions per day for each cinema room
-	//lets keep times fixed of 10 am and 2pm
-	//everyday at 10 am there will be 1 moie in 
+	//means 4 movies each day
 
 
 }
+<<<<<<< HEAD
 //login and register page functionality
 var userLoggedIn= null;
 
@@ -138,3 +144,5 @@ function register(){
 
 }
 
+=======
+>>>>>>> parent of f2ebee5... regisiter and show times

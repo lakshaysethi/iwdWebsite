@@ -4,7 +4,7 @@ $(document).ready(function () {
             format: 'mm-dd-yyyy',
             autoclose:true,
             endDate: "today",
-            maxDate: "+1M",
+            maxDate: "+14D",
             minDate: today
         }).on('changeDate', function (ev) {
                 $(this).datepicker('hide');
